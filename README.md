@@ -1,5 +1,4 @@
 # VidFetch
-___
 
 
 ![image](https://github.com/user-attachments/assets/f948b72d-da6c-494e-b0a3-522d6cc36de8)
