@@ -46,7 +46,7 @@ ___
    ```bash
    pip install -r requirements.txt
    ```
-**Usage**
+## **Usage**
 Run the Tool:
    ```bash
    python main.py
