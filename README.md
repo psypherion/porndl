@@ -1,5 +1,5 @@
 # VidFetch
-
+V 0.02
 
 ![image](https://github.com/user-attachments/assets/f948b72d-da6c-494e-b0a3-522d6cc36de8)
 
@@ -9,15 +9,23 @@ ___
 
 ## Features
 
-- Extracts video download links from specified web pages.
-- Downloads videos using `curl`, supporting various video formats.
-- Simple command-line interface for ease of use.
-
+- V 0.01 : 
+       - Extracts video download links from specified web pages.
+       - Downloads videos using `curl`, supporting various video formats.
+       - Simple command-line interface for ease of use.
+- V 0.02 :
+       - Now supports Windows(untested) and Linux (both arch & debian)
+       - added curlSetup.py for automating curl download and installation
+- V 0.03 (**probable features**)
+       - Playlist Downloader
+       - Download History Log
+  
 ## Files
 
 - `requirements.txt`: Lists the Python dependencies required for the project.
 - `spnkgbng.py`: Contains the `VideoDownloader` class which handles the extraction and downloading of videos.
 - `main.py`: The main script that prompts the user for a video URL and initiates the download process.
+- `curlSetup.py` : Contains `curlDownloader` class which handles the curl download and installation for various system. (added in version 0.02)
 
 ## Installation
 
