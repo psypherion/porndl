@@ -52,7 +52,8 @@ Run the Tool:
    ```
 ___
 
-![image](https://github.com/user-attachments/assets/afa6aaa3-4d8a-4fd1-a0d4-8c52f2c9a149)
+![image](https://github.com/user-attachments/assets/4a307e8a-8401-4ee6-bab8-415800759465)
+
 
 ___
 
