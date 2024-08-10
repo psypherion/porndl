@@ -9,44 +9,38 @@ ___
 
 ## Features
 
-- V 0.03 :
-___
-        1. Extracts video download links from specified web pages.
-        2. Downloads videos using `curl`, supporting various video formats.
-        3. Simple command-line interface for ease of use.
-        4. Now supports Windows(untested) and Linux (both arch & debian)
-        5. added curlSetup.py for automating curl download and installation
-        6. Playlist Downloader
-        7. Download History Log
-        8. Playlist Downloading multiple webpage support.
-___
+### V 0.03
+- **Video Downloading:**
+  1. Extracts video download links from specified web pages.
+  2. Downloads videos using `curl`, supporting various video formats.
+- **User Interface:**
+  3. Simple command-line interface for ease of use.
+- **Platform Support:**
+  4. Supports Windows (untested) and Linux (both Arch & Debian).
+- **Additional Tools:**
+  5. Added `curlSetup.py` for automating `curl` download and installation.
+- **Playlist Management:**
+  6. Playlist Downloader.
+  7. Playlist downloading with multiple webpage support.
+- **Logging:**
+  8. Download History Log.
 
-- V 1.0 (probable features):
-___
-1. Front-end:
+### V 1.0 (Probable Features)
 
-**User Interface**:
-        Simple and intuitive design for ease of use.
-        Responsive layout for various screen sizes and devices.
-        Video and Playlist Integration:
-        Interface for users to input video or playlist URLs.
-        Display of progress and status updates for downloads.
-**Error Handling**:
-        User-friendly error messages and notifications.
-**Download Management**:
-        Options for custom file naming.
-        Display list of downloaded videos with options to view or delete.
-___
-2. Back-end:
+#### 1. Front-end
+- **User Interface:**
+  - Simple and intuitive design for ease of use.
+  - Responsive layout for various screen sizes and devices.
+  - Video and playlist integration:
+    - Interface for users to input video or playlist URLs.
+    - Display of progress and status updates for downloads.
+- **Error Handling:**
+  - User-friendly error messages and notifications.
+- **Download Management:**
+  - Options for custom file naming.
+  - Display list of downloaded videos with options to view or delete.
 
-**Video and Playlist Downloading**:
-        Extraction of video download links from provided URLs.
-        Handling of both single video and playlist downloads.
-**Pagination Handling**:
-        Support for pagination in playlists with automatic page fetching.
-**Curl Integration**:
-        Use of curl for video downloading with fallbacks and installation checks.
-___
+
 ## Files
 
 - `requirements.txt`: Lists the Python dependencies required for the project.
