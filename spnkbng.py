@@ -1,6 +1,7 @@
 import httpx
 from bs4 import BeautifulSoup
 import os
+from curlSetup import CurlInstaller  
 
 class VideoDownloader:
     def __init__(self, video_page_url):
@@ -12,13 +13,13 @@ class VideoDownloader:
             "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
         }
         self.session = httpx.Client(headers=self.headers)
+        self.curl_installer = CurlInstaller()  
 
     def extract_vdownload_link(self):
         response = self.session.get(self.video_page_url)
         response.raise_for_status()
 
         soup = BeautifulSoup(response.content, 'html.parser')
-
         video_container = soup.find('div', id='video_container')
         if video_container:
             video_tag = video_container.find('video', id='main_video_player')
@@ -31,7 +32,14 @@ class VideoDownloader:
         return None
 
     def downloader(self, video_url, name):
-        os.system('sudo apt install curl')
+        
+        if not self.curl_installer.is_curl_installed():
+            print("curl is not installed. Installing curl...")
+            self.curl_installer.install_curl()
+        else:
+            print("curl is already installed.")
+
+        # Download the video using curl
         os.system(f'curl -o {name}.mp4 "{video_url}"')
 
     def run(self):
@@ -44,3 +52,11 @@ class VideoDownloader:
             self.downloader(video_link, name)
         else:
             print("Failed to extract the video link.")
+
+class PlaylistDownloader:
+    pass
+
+if __name__ == "__main__":
+    link = input("Enter the video page URL: ")
+    video_downloader = VideoDownloader(link)
+    video_downloader.run()
