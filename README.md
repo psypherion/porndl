@@ -11,19 +11,19 @@ ___
 
 - V 0.01 :
 ___
-       - Extracts video download links from specified web pages.
-       - Downloads videos using `curl`, supporting various video formats.
-       - Simple command-line interface for ease of use.
+        1. Extracts video download links from specified web pages.
+        2. Downloads videos using `curl`, supporting various video formats.
+        3. Simple command-line interface for ease of use.
 ___
 - V 0.02 :
 ___
-       - Now supports Windows(untested) and Linux (both arch & debian)
-       - added curlSetup.py for automating curl download and installation
+       1. Now supports Windows(untested) and Linux (both arch & debian)
+       2. added curlSetup.py for automating curl download and installation
 ___
 - V 0.03 (**probable features**)
 ___
-       - Playlist Downloader
-       - Download History Log
+       1. Playlist Downloader
+       2. Download History Log
 ___
   
 ## Files
@@ -46,7 +46,7 @@ ___
    ```bash
    pip install -r requirements.txt
    ```
-## **Usage**
+## Usage
 Run the Tool:
    ```bash
    python main.py
