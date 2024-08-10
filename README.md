@@ -40,8 +40,9 @@ ___
    git clone https://github.com/ky13-troj/vidFetch.git
    cd vidFetch
    ```
+   or, you can downoad the [zipfile](https://github.com/ky13-troj/vidFetch/archive/refs/heads/main.zip)
 2. **Install Dependencies:**
-Ensure you have `pip` installed, then run:
+(assuming you've python installed already)Ensure you have `pip` installed, then run:
    ```bash
    pip install -r requirements.txt
    ```
