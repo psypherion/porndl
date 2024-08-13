@@ -1,4 +1,4 @@
-from spnkbng import VideoDownloader, PlaylistDownloader
+from vidFetch import VideoDownloader, PlaylistDownloader
 
 def main():
     link = input("Enter the URL: ")
