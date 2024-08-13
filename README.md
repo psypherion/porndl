@@ -1,4 +1,4 @@
-# VidFetch
+# prn-dl
 
 V 0.04
 
