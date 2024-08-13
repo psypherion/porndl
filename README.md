@@ -26,16 +26,16 @@ ___
   1. Extracts video download links from specified web pages.
   2. Downloads videos using `curl`, supporting various video formats.
 * **User Interface:**
-  3. Simple command-line interface for ease of use.
+  1. Simple command-line interface for ease of use.
 * **Platform Support:**
-  4. Supports Windows (untested) and Linux (both Arch & Debian).
+  1. Supports Windows (untested) and Linux (both Arch & Debian).
 * **Additional Tools:**
-  5. Added `curlSetup.py` for automating `curl` download and installation.
+  1. Added `curlSetup.py` for automating `curl` download and installation.
 * **Playlist Management:**
-  6. Playlist Downloader.
-  7. Playlist downloading with multiple webpage support.
+  1. Playlist Downloader.
+  2. Playlist downloading with multiple webpage support.
 * **Logging:**
-  8. Download History Log.
+  1. Download History Log.
 
 ### V 0.04
 
