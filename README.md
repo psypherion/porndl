@@ -9,7 +9,7 @@ V 0.03
 
 ___
 
-**VidFetch** is a Python-based tool for extracting and downloading video content from an adult site -> [click Here](https://spankbang.com). and \[click Here\](<https://www.xfree.com/>)This tool enables users to easily retrieve video links and save videos locally with minimal setup.
+**VidFetch** is a Python-based tool for extracting and downloading video content from an adult site -> [click Here](https://spankbang.com). and [click Here](https://www.xfree.com). This tool enables users to easily retrieve video links and save videos locally with minimal setup.
 
 ## Features
 
