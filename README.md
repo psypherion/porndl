@@ -75,7 +75,7 @@ ___
 
    ```bash
    git clone https://github.com/ky13-troj/prn-dl.git
-   cd vidFetch
+   cd prn-dl
    ```
 
    or, you can downoad the [zipfile](https://github.com/ky13-troj/prn-dl/archive/refs/heads/main.zip)
