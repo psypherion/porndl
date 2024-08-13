@@ -9,8 +9,8 @@ V 0.04
 
 ___
 
-**prn-dl** is a Python-based cli tool for extracting and downloading video content from an adult sites -> 
-
+**prn-dl** is a Python-based cli tool for downloading video content from an adult sites -> 
+Supports Only the following sites : 
 1. [spankbang](https://spankbang.com).
 2. [xfree](https://www.xfree.com).
 
