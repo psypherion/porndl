@@ -1,6 +1,7 @@
+import os
+import re
 import httpx
 from bs4 import BeautifulSoup
-import os
 import logging
 import shlex
 from curlSetup import CurlInstaller
@@ -16,13 +17,21 @@ DOWNLOAD_DIR = "downloads"
 if DOWNLOAD_DIR not in os.listdir():
     os.mkdir(DOWNLOAD_DIR)
 
+SITES = ["spankbang", "xfree"]
 class VideoDownloader:
     def __init__(self, video_page_url, file_name=None):
         self.video_page_url = video_page_url
         self.file_name = file_name
+        self.flag = None
+        if SITES[0] in video_page_url:
+            self.site = "https://"+SITES[0]+".com/"
+            self.flag = 0
+        elif SITES[1] in video_page_url:
+            self.site = "https://"+SITES[1]+".com/"
+            self.flag = 1
         self.headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36",
-            "Referer": "https://spankbang.com/",
+            "Referer": f"{self.site}",
             "Accept-Language": "en-US,en;q=0.9",
             "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
         }
@@ -33,15 +42,21 @@ class VideoDownloader:
         response = self.session.get(self.video_page_url)
         response.raise_for_status()
         soup = BeautifulSoup(response.content, 'html.parser')
-        video_container = soup.find('div', id='video_container')
-        if video_container:
-            video_tag = video_container.find('video', id='main_video_player')
-            if video_tag:
-                source_tag = video_tag.find('source')
-                if source_tag:
-                    vdownload_link = source_tag.get('src')
-                    return vdownload_link
-        return None
+        vdownload_link = None
+        if self.flag == 0:
+            video_container = soup.find('div', id='video_container')
+            if video_container:
+                video_tag = video_container.find('video', id='main_video_player')
+                if video_tag:
+                    source_tag = video_tag.find('source')
+                    if source_tag:
+                        vdownload_link = source_tag.get('src')
+        elif self.flag == 1:
+            pattern = re.compile('/xfree-prod/(.+?)/full.mp4')
+            matches = re.findall(pattern, response.content.decode("UTF-8"))
+            if matches:
+                vdownload_link = f"https://cdn.xfree.com/xfree-prod/{matches[0]}/full.mp4"
+        return vdownload_link
 
     def downloader(self, video_url):
         if not self.curl_installer.is_curl_installed():
@@ -49,12 +64,14 @@ class VideoDownloader:
             self.curl_installer.install_curl()
         else:
             print("curl is already installed.")
-        
+        if "title=" in self.video_page_url:
+            self.file_name=self.video_page_url.split("title=")[1]
+        elif "id=" in self.video_page_url:
+            self.file_name=self.video_page_url.split("id+")[1]
         name = self.file_name if self.file_name else self.video_page_url.split("video/")[1]
-        name = name.replace("+", "_").replace(" ", "_").replace("/", "_").replace("\\", "_")
+        name = name.replace("+", "_").replace(" ", "_").replace("/", "_").replace("\\", "_").replace("-", "_")
         if os.path.exists(f"{DOWNLOAD_DIR}/{name}.mp4"):
             name = f"{name}_{int(os.path.getmtime(f'{name}.mp4'))}"
-
         safe_name = shlex.quote(name)
         
         os.system(f'curl -o {DOWNLOAD_DIR}/{safe_name}.mp4 "{video_url}"')
