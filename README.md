@@ -1,6 +1,6 @@
 # VidFetch
 
-V 0.03
+V 0.04
 
  ![image](https://github.com/user-attachments/assets/f948b72d-da6c-494e-b0a3-522d6cc36de8)
 
@@ -9,7 +9,12 @@ V 0.03
 
 ___
 
-**VidFetch** is a Python-based tool for extracting and downloading video content from an adult site -> [click Here](https://spankbang.com). and [click Here](https://www.xfree.com). This tool enables users to easily retrieve video links and save videos locally with minimal setup.
+**prn-dl** is a Python-based cli tool for extracting and downloading video content from an adult sites -> 
+
+1. [spankbang](https://spankbang.com).
+2. [xfree](https://www.xfree.com).
+
+   This tool enables users to easily retrieve video links and save videos locally with minimal setup.
 
 ## Features
 
@@ -70,11 +75,11 @@ ___
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/ky13-troj/vidFetch.git
+   git clone https://github.com/ky13-troj/prn-dl.git
    cd vidFetch
    ```
 
-   or, you can downoad the [zipfile](https://github.com/ky13-troj/vidFetch/archive/refs/heads/main.zip)
+   or, you can downoad the [zipfile](https://github.com/ky13-troj/prn-dl/archive/refs/heads/main.zip)
 2. **Install Dependencies:**
    (assuming you've python installed already)Ensure you have `pip` installed, then run:
 
